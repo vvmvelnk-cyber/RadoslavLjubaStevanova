@@ -1,0 +1,257 @@
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background-color: rgba(190, 190, 250, .6);
+}
+
+#head {
+    height: 112px;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        90deg,
+        #888,
+        #eee,
+        #888
+      );
+    z-index: 2;
+    position: fixed;
+}
+
+.family {
+    width: 180px;
+    font-family: wester, 'sans-serif';
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 300;
+    color: #eee;
+    border-bottom: 3px solid lightgray;
+    border-bottom-style: groove;
+    margin: 5px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .8);
+}
+
+#title {
+    font-size: 40px;
+    margin-top: -5px;
+    text-align: center;
+    justify-content: center;
+    color: darkblue;
+}
+
+hr {
+  margin-bottom: 0.5em;
+  border-style: inset;
+  border-width: 1px;
+}
+
+#rightButtons {
+    position: fixed;
+    right: 2vw;
+    top: 70px;
+    width: 340px;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    padding: 10px 0;
+    z-index: 2;
+}
+
+.cButtons {
+    padding: 3px 10px;
+    margin: 0 10px;
+    border-radius: 5px;
+    background-color: #ddd;
+    font-size: 16px;
+    font-weight: bold;
+    color: darkblue;
+    cursor: pointer;
+}
+
+.cButtons:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+#address {
+    display: none;
+    position: absolute;
+    right: 2vw;
+    top: 110px;
+    width: 200px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    padding: 8px 15px;
+    margin-top: 15px;
+    border: 2px solid darkblue;
+    border-radius: 5px;
+    font-family: "Arial", sans-serif;
+    text-align: justify;
+    background-color: #ddd;
+    color: darkblue;
+    z-index: 2;
+}
+
+#address b:hover {
+    padding: 3px 6px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#cancel2 {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: transparent;
+}
+
+#cancel2:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+#copyright {
+    position: fixed;
+    text-align: center;
+    font-size: 16px;
+    color: #ddd;
+    left: 30px;
+    bottom: 10px;
+}
+
+@media screen and (min-width: 400px) and (max-width: 900px) {
+    #head {
+        height: 105px;
+        margin-top: 0;
+    }
+    #title { 
+    font-size: 32px;
+    }
+   #notes {
+        top: 60px;
+    }
+}
+
+
+.label {
+        display: block;
+        position: absolute;
+        width: 50px;
+        padding: 5px 10px;
+        margin: 3px;
+        background-color: #522;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        user-select: none;
+        transition: background-color 0.2s;
+        z-index: 1;
+    }
+    .label:hover {
+        background-color: #d0eaff;
+    }
+    
+    .label.active {
+        background-color: #4caf50;
+        color: white;
+    }
+
+#small_shema {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 2000px;
+    height: 4000px;
+    background-color: #559;
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    cursor: grab;
+    overflow: auto; 
+    user-select: none;
+    /*transform: rotate(-90deg);*/
+}
+
+#head2 {
+    position: fixed;
+    width: 100vw;
+    top: 125px;
+    font-size: 24px;
+    color: #fff; 
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    background: transparent;
+    z-index: 1;
+}
+
+#po_djedu {
+    top: 125px;
+    padding: 5px;
+    z-index: 1;
+}
+
+.vlabel {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    text-align: center;
+    vertical-align: middle;
+    border: 0.1px solid #aaa;
+    font-weight: 600;
+    width: 330px;
+    height: 60px;
+    padding-top: 11px;
+    color: #eee; 
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.vlabel:hover {
+    border: 3px solid #ddd;
+  }
+  
+  .imgGroup {
+    display: block;
+  }
+ 
+    .iS {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border: 0.1px solid #aaa;
+        cursor: pointer;
+    }
+    
+    .iS:hover {
+        border: 3px solid #888;
+    }
+    
+    .iL {
+        display: none;
+        position: fixed;
+        top: 125px;
+        left: 10px;
+        width: auto;
+        height: 300px;
+        min-width: 200px;
+        border: 0.1px solid #aaa;
+        border-radius: 20px;
+        cursor: pointer;       
+    }
+
+
