@@ -27,7 +27,7 @@ body {
 }
 
 .family {
-    width: 180px;
+    width: 160px;
     font-family: wester, 'sans-serif';
     font-style: italic;
     font-size: 18px;
@@ -244,8 +244,8 @@ hr {
     .iL {
         display: none;
         position: fixed;
-        top: 125px;
-        left: 10px;
+        top: 135px;
+        left: 20px;
         width: auto;
         height: 300px;
         min-width: 200px;

@@ -262,8 +262,8 @@ smallArr = [
     [3, 2, 'Milica', 'Medojević', 2, 0, 0, 0, 1, 2],
     [4, 2, 'Srđan', 'Martinović', 3, 0, 0],
     [5, 2, 'Jovana', 'Medojević', 2, 0, 0, 0, 1, 2],
-    [6, 3, '?', '?', 4, 0, 0, 1, 3, 4],
-    [7, 3, '?', '?', 6, 0, 0, 1, 3, 4]
+    [6, 3, 'Mia', 'Martinović', 6, 0, 0, 1, 3, 4],
+    [7, 3, 'Matija', 'Martinović', 4, 0, 0, 1, 3, 4]
 ];       
 
     function labelsDesign2() {
@@ -308,8 +308,12 @@ function coordinateCount2() {
             } else {
                 n3++;
             }            
-        } 
-        x02 = (wWidth-(3*a2 + 2*dH))/2 - 30;
+        }
+        if ((wWidth-(3*a2 + 2*dH))/2 > 30) {
+          x02 = (wWidth-(3*a2 + 2*dH))/2 - b2/2;  
+        } else {
+            x02 = 30;
+        }        
         for(let i=0; i<n1; i++) {
             smallArr[i][5] = x02;
             smallArr[i][6] = y02 + b2*i;
@@ -365,8 +369,16 @@ function coordinateCount2() {
                         if((s+1!==cA2.length) && (smallArr[cA2[s]][8] === smallArr[cA2[s+1]][8])){
                             prvi = false;                     
                         } else {
-                            for(let t=r; t<n1+n2; t++){
-                               smallArr[t][6] = smallArr[t][6] - b2/2;
+                            yFather = yFC - b2/2;
+                            yTranslate = yFather - smallArr[r][6];
+                            if (yTranslate>=0) {
+                               for(let t=r; t<n1+n2; t++){
+                                    smallArr[t][6] = smallArr[t][6] + yTranslate; 
+                               }
+                            } else if (yTranslate<0) {
+                                for(let t=fCI; t<smallArr.length; t++){
+                                   smallArr[t][6] = smallArr[t][6] - yTranslate;
+                                }
                             }
                         }
                     } else if((s===cA2.length-1) || (smallArr[cA2[s]][8] !== smallArr[cA2[s+1]][8])) {
